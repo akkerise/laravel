@@ -130,3 +130,30 @@ Route::get('response/macro/contact',function(){
 
 Route::get('authen/login','ThanhVienController@getLogin')->name('getLogin');
 Route::post('authen/login','ThanhVienController@postLogin')->name('postLogin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+
+Route::get('auth/getRegister','AuthController@getRegister')->name('getRegister');
+Route::post('auth/postRegister','AuthController@postRegister')->name('postRegister');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
