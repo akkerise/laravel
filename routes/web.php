@@ -14,6 +14,8 @@
 Route::get('/', function () {
 	return view('welcome');
 });
+
+Route::get('/', 'WelcomeController@index');
 Route::get('/routes', function(){
 	return view('routes');
 });
@@ -54,7 +56,8 @@ Route::get('/success', function (){
 	return view('success.success');
 });
 
-//Route::any('{all?}' , 'WelcomeController@index')->where('all','(.*)');
+//Route::any('{all?}' , 'WelcomeController@error')->where('all','(.*)');
+
 Route::get('/testbs3', function (){
 	return view('testbs3');
 });
@@ -125,3 +128,5 @@ Route::get('response/macro/contact',function(){
 	return response()->contact('http://localhost:8000/response/macro/cap');
 });
 
+Route::get('authen/login','ThanhVienController@getLogin')->name('getLogin');
+Route::post('authen/login','ThanhVienController@postLogin')->name('postLogin');

@@ -13,9 +13,12 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function error(){
+        return abort('403');
+    }
     public function index()
     {
-        return abort('403');
+        return view('welcome');
     }
 
     /**
