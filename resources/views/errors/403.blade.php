@@ -41,7 +41,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Trang Bạn Đã Nhập Không Tìm Thấy Quay Lại Không Bố Đập Chết Mày</div>
-                <img src="{{ asset('/img/kne1428426787.jpg') }}" class="img-responsive" alt="Image">
+                <img style="border-radius:20px;" src="{{ asset('/img/19707142.jpeg') }}" class="img-responsive" alt="Image">
             </div>
         </div>
     </body>

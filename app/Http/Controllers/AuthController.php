@@ -6,15 +6,17 @@ namespace App\Http\Controllers;
 // use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 //use Illuminate\Http\Request;
 // use App\Http\Requests;
+//use Illuminate\Support\Facades\Request;
 use AuthenticatesAndRegistersUsers;
-
 use Illuminate\Contracts\Routing\Registrar;
 use App\Http\Requests\RegisterRequest;
-//use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Model;
 use App\User;
+use Validator;
+
+//use Dotenv\Validator;
 
 class AuthController extends Controller
 {
@@ -45,6 +47,26 @@ class AuthController extends Controller
             '*.min' => ':attribute phải có ít nhất :min ký tự',
             'email.unique' => 'Email bạn nhập vào đã tồn tại'
         ];
-        $validation = Validator::make($request->all());
+//        dd($request->all());
+        $validation = Validator::make($request->all(), $rules, $messages);
+//        dd($validation->fails());
+        echo "<pre>";
+        var_dump($validation->fails());
+        echo "</pre>";
+        exit;
+
+        if ($validation->fails()) {
+            dd($validation);
+            return redirect()->back()->withInput()->withErrors($validation);
+            dd($validation);
+        } else {
+//            dd($validation);
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->save();
+        }
+
     }
 }

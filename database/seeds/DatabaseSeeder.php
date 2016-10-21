@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 //    	$this->call(CarSeeder::class);
 //    	$this->call(ColorSeeder::class);
 //    	$this->call(CarColorSeeder::class);
-        $this->call(ThanhVienSeeder::class);
+        $this->call(RegSeeder::class);
     }
 }
 
@@ -96,6 +96,20 @@ class ThanhVienSeeder extends Seeder
             ['user' => "Dinh" , 'pass' => Hash::make(888888) , 'level' => 2],
             ['user' => "Atk" , 'pass' => Hash::make(888888) , 'level' => 9],
             ['user' => "Cdk" , 'pass' => Hash::make(888888) , 'level' => 3],
+        ]);
+    }
+}
+
+class RegSeeder extends Seeder
+{
+    public function run(){
+        DB::table('regs')->insert([
+            ['name' => "Thanh" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
+            ['name' => "Luong" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
+            ['name' => "Anh" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
+            ['name' => "Dinh" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
+            ['name' => "Atk" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
+            ['name' => "Cdk" , 'email' => 'dungduavoicurua@gmail.com' ,'pass' => Hash::make(888888)],
         ]);
     }
 }

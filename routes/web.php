@@ -138,12 +138,11 @@ Route::get('/home', 'HomeController@index');
 Route::get('auth/getRegister','AuthController@getRegister')->name('getRegister');
 Route::post('auth/postRegister','AuthController@postRegister')->name('postRegister');
 
+Route::get('/getreg' , 'RegController@getreg')->name('getreg');
+Route::post('/postreg', 'RegController@postreg')->name('postreg');
 
-
-
-
-
-
+Route::get('/getlogin', 'LoginController@getlogin')->name('getlogin');
+Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
 
 
 
